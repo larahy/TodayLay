@@ -12,8 +12,8 @@ const Master = ({ children, title, ctx }) => (
             <link href="/css/style.css" type="text/css" rel="stylesheet" />
             <title>
                 {title
-                    ? `${title} — koa-skeleton`
-                    : 'koa-skeleton — a basic koa webapp demo'}
+                    ? `${title}`
+                    : 'Today Lay'}
             </title>
         </head>
         <body>
@@ -21,7 +21,7 @@ const Master = ({ children, title, ctx }) => (
                 <div className="container">
                     <div className="navbar-header">
                         <a className="navbar-brand" href="/">
-                            koa-skeleton
+                            Today Lay
                         </a>
                     </div>
                     <Userbox ctx={ctx} />
@@ -50,15 +50,7 @@ const Master = ({ children, title, ctx }) => (
                 <div className="footer text-muted text-center">
                     <hr />
                     <p>
-                        © 2015 — Source on{' '}
-                        <a href="https://github.com/danneu/koa-skeleton">
-                            Github
-                        </a>{' '}
-                        — Cute skeleton icon from{' '}
-                        <a href="https://www.reddit.com/r/PixelArt/comments/100tkt/two_weeks_ago_i_posted_50_mini_roleplay_adventure/">
-                            svh440
-                        </a>{' '}
-                        — Demo by <a href="https://github.com/danneu">danneu</a>
+                        Thank you for playing !
                     </p>
                 </div>
             </div>

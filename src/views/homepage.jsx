@@ -4,7 +4,7 @@ const PropTypes = require('prop-types')
 const MessagePanel = require('./partials/message-panel')
 
 const Homepage = ({ ctx, messages }) => [
-    <Jumbotron />,
+    <Jumbotron ctx={ctx} />,
 
     <div className="row">
         <div className="col-lg-6 col-lg-offset-3">
@@ -37,48 +37,24 @@ const Homepage = ({ ctx, messages }) => [
     <script src="/js/on-recaptcha-success.js" />,
 ]
 
-const Jumbotron = () => (
+const Jumbotron = ({ctx}) => (
     <div
         className="jumbotron text-center"
         style={{ backgroundColor: 'inherit' }}
     >
         <h1>
             <a href="/" style={{ color: '#333' }}>
-                koa-skeleton
+                Today Lay
             </a>
         </h1>
         <img
-            src="/img/skeleton.png"
-            height="75"
-            width="75"
+            src="/img/chicken.jpg"
+            height="350"
+            width="350"
             alt="skeleton icon"
         />
-        <p style={{ marginTop: '15px' }}>
-            A simple <a href="http://koajs.com/">Koa</a> + Postgres webapp demo
-            <br />
-            that comes with useful abstractions and
-            <br />
-            boilerplate that work for me
-        </p>
-        <a
-            className="btn btn-lg btn-success"
-            href="https://github.com/danneu/koa-skeleton"
-            style={{ marginBottom: '20px' }}
-        >
-            View on GitHub
-            <p style={{ fontSize: '14px', marginBottom: '5px' }}>
-                Just clone, gut, and modify
-            </p>
-        </a>
-        <a
-            href="https://heroku.com/deploy?template=https://github.com/danneu/koa-skeleton"
-            style={{ display: 'block' }}
-        >
-            <img
-                src="https://www.herokucdn.com/deploy/button.svg"
-                alt="Deploy"
-            />
-        </a>
+         <Userbox ctx={ctx} />
+    
     </div>
 )
 
@@ -120,8 +96,27 @@ const NewMessagePanel = ({ ctx }) => (
     </form>
 )
 
+const Userbox = ({ ctx }) => {
+    if (ctx.currUser) {
+        return [
+            <div >
+                <p style={{ marginTop: '20px' }}>Welcome back {' '} {ctx.currUser.uname}{' '}</p>
+            </div>,
+        ]
+    } else {
+        return [
+        <div>
+        <p style={{ marginTop: '20px' }}>
+            Greetings Manxman, to win gambling credit please <a href="/register"> REGISTER</a> or <a href="/login"> LOGIN</a>,
+        </p>
+        </div>,
+        ]
+    }
+}
+
 Homepage.propTypes = {
     messages: PropTypes.array.isRequired,
+    ctx: PropTypes.object.isRequired,
 }
 
 module.exports = Homepage

@@ -133,6 +133,7 @@ router.get('/users/:uname', loadUser(), async ctx => {
 
 // Create message
 router.post('/messages', mw.ratelimit(), mw.ensureRecaptcha(), async ctx => {
+    console.log('posting a new message')
     // AUTHZ
     ctx.assertAuthorized(ctx.currUser, 'CREATE_MESSAGE')
     // VALIDATE
