@@ -138,16 +138,24 @@ router.post('/messages', mw.ratelimit(), mw.ensureRecaptcha(), async ctx => {
     ctx.assertAuthorized(ctx.currUser, 'CREATE_MESSAGE')
     // VALIDATE
     ctx
-        .validateBody('markup')
+        .validateBody('eggs')
         .required('Must provide a message')
         .isString()
         .trim()
         .tap(belt.transformMarkup)
-        .isLength(3, 300, 'Message must be 3-300 chars')
-    // SAVE
+        .isLength(1, 100, 'Message must be 1-300 chars')
+    console.log('eggs = ', ctx.vals.eggs)
+    console.log('weight = ', ctx.vals.weight)
+    console.log('context', ctx)
+
+    ctx
+        .validateBody('weight')
+        .isString('this must be a sting')
+
     await db.insertMessage({
         user_id: ctx.currUser && ctx.currUser.id,
-        markup: ctx.vals.markup,
+        eggs: ctx.vals.eggs,
+        weight: ctx.vals.weight,
         ip_address: ctx.request.ip,
         user_agent: ctx.headers['user-agent'],
     })
@@ -219,12 +227,12 @@ router.put('/messages/:message_id', loadMessage(), async ctx => {
             .isString()
             .tap(x => x === 'true')
     }
-    if (ctx.request.body.markup) {
+    if (ctx.request.body.eggs) {
         ctx.assertAuthorized(ctx.currUser, 'UPDATE_MESSAGE_MARKUP', message)
         // FIXME: Extract markup validation into its own .isValidMarkup validator
         // and then reuse ctx here and in the insert-message route
         ctx
-            .validateBody('markup')
+            .validateBody('eggs')
             .isString()
             .trim()
             .tap(belt.transformMarkup)
@@ -238,7 +246,7 @@ router.put('/messages/:message_id', loadMessage(), async ctx => {
     // UPDATE
     await db.updateMessage(message.id, {
         is_hidden: ctx.vals.is_hidden,
-        markup: ctx.vals.markup,
+        eggs: ctx.vals.eggs,
     })
     // RESPOND
     ctx.flash = { message: ['success', 'Message updated'] }

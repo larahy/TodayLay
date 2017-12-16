@@ -25,11 +25,6 @@ const Master = ({ children, title, ctx }) => (
                         </a>
                     </div>
                     <Userbox ctx={ctx} />
-                    <ul className="nav navbar-nav">
-                        <li className={ctx.path === '/users' ? 'active' : ''}>
-                            <a href="/users">Users</a>
-                        </li>
-                    </ul>
                 </div>
             </nav>
 

@@ -89,13 +89,15 @@ exports.getRecentMessagesForUserId = async function(userId) {
 // data.ip_address is string
 // data.user_agent is optional string
 exports.insertMessage = async function(data) {
-    assert(typeof data.markup === 'string')
+    assert(typeof data.eggs === 'string')
+    assert(typeof data.weight === 'string')
     assert(typeof data.ip_address === 'string')
     return pool.one(sql`
-    INSERT INTO messages (user_id, markup, ip_address, user_agent)
+    INSERT INTO messages (user_id, eggs, weight, ip_address, user_agent)
     VALUES (
       ${data.user_id},
-      ${data.markup},
+      ${data.eggs},
+      ${data.weight},
       ${data.ip_address}::inet,
       ${data.user_agent})
     RETURNING *

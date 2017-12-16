@@ -23,14 +23,15 @@ INSERT INTO users (uname, digest)
 -- Create some messages
 ------------------------------------------------------------
 
-INSERT INTO messages (user_id, markup, ip_address)
+INSERT INTO messages (user_id, eggs, weight, ip_address)
   SELECT
     trunc(random() * 1000 + 1), -- Random int [1, 1000]
     'Seeded message ' || x.id,
+    '50g',
     '1.2.3.4'::inet
   FROM generate_series(1, 1000) AS x(id)
 ;
 
-INSERT INTO messages (user_id, markup, ip_address) VALUES
-(null, 'This is an anonymous message!', '1.2.3.4'::inet)
+INSERT INTO messages (user_id, eggs, weight, ip_address) VALUES
+(null, '5', '70g','1.2.3.4'::inet)
 ;

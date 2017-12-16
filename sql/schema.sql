@@ -51,7 +51,8 @@ CREATE TABLE messages (
   id            serial PRIMARY KEY,
   -- if null, then user is anonymous
   user_id       int  NULL REFERENCES users(id),
-  markup        text NOT NULL,
+  eggs        text NOT NULL,
+  weight      text NOT NULL,
   is_hidden     boolean NOT NULL DEFAULT false,
   ip_address    inet NOT NULL,
   user_agent    text NULL,
