@@ -1,2 +1,2 @@
 web: npm start
-worker: npm reset-db
+worker: npm run reset-db
