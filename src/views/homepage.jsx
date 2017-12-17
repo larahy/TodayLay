@@ -159,7 +159,7 @@ const Userbox = ({ ctx }) => {
         return [
         <div class='jumbotron introtext text-center'>
         <p>
-            To win gambling credit please study the instructions and table below, then <a href="/register"> REGISTER</a> to get winning! Or if you already have an account please <a href="/login"> LOGIN</a>,
+            To win gambling credit please study the instructions and table below, then <a href="/register"> REGISTER</a> to get winning! Or if you already have an account please <a href="/login"> LOGIN</a>
         </p>
         <h2>Egg number prediction</h2>
 <p>There will be £5 for predicting the correct number of eggs laid.
