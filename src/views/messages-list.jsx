@@ -9,7 +9,7 @@ const MessagesList = ({ ctx, messages, messagesCount, paginator }) => [
         <li>
             <a href="/">Home</a>
         </li>
-        <li className="active">Messages</li>
+        <li className="active">Guesses</li>
     </ol>,
     <div className="page-header">
         <h1>

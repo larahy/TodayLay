@@ -42,21 +42,12 @@ const Homepage = ({ ctx, messages }) => [
 ]
 
 const Jumbotron = () => (
-    <div
-        className="jumbotron text-center"
-        style={{ backgroundColor: 'inherit' }}
-    >
+    <div className="jumbotron text-center" style={{ backgroundColor: 'inherit' }}>
         <h1>
             <a href="/" style={{ color: '#333' }}>
                 Today Lay
             </a>
         </h1>
-        <img
-            src="/img/chicken.jpg"
-            height="350"
-            width="350"
-            alt="skeleton icon"
-        />
         <table id="customers">
   <tr>
     <th>Calendar date</th>

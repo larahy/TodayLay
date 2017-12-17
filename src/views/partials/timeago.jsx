@@ -3,7 +3,7 @@ const PropTypes = require('prop-types')
 const belt = require('../../belt')
 
 const Timeago = ({ date }) => (
-    <abbr title={date.toISOString()}>{belt.timeago(date)}</abbr>
+    <p>{date.toLocaleDateString()}</p>
 )
 
 Timeago.propTypes = {

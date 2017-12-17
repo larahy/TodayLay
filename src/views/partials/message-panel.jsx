@@ -19,14 +19,6 @@ const MessagePanel = ({ ctx, message }) => {
                     <Timeago date={message.created_at} />{' '}
                     {message.user ? (
                         [
-                            <a href={message.user.url}>
-                                <img
-                                    src={belt.toAvatarUrl(message.user.uname)}
-                                    alt={`${message.user.uname} avatar`}
-                                    height={24}
-                                    width={24}
-                                />
-                            </a>,
                             ' ',
                             <a href={message.user.url}>{message.user.uname}</a>,
                         ]

@@ -7,6 +7,8 @@
 body {
     font-size: 16px; /* Bootstrap default is 14px, too small */
     padding-bottom: 10px;
+    background-image: url('../img/wallpaper.jpg');
+    font-family: courier;
 }
 
 /* Centers the generated Recaptcha iframe within its container */
@@ -45,9 +47,10 @@ abbr[title] {
 }
 
 #customers {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-family: "Courier New"
     border-collapse: collapse;
     width: 100%;
+    margin-top: 60px;
 }
 
 #customers td, #customers th {
@@ -63,6 +66,6 @@ abbr[title] {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: #7D879B;
     color: white;
 }
