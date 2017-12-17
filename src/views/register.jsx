@@ -43,9 +43,6 @@ const Register = ({ ctx }) => [
                             <div className="help-block">
                                 Must be 3-15 chars long
                                 <br />
-                                Valid chars:
-                                <code>a-z</code>, <code>0-9</code>, underscore (<code>_</code>),
-                                hyphen (<code>-</code>)
                             </div>
                         </div>
                         <div className="form-group">

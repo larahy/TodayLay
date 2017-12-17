@@ -4,9 +4,10 @@ const PropTypes = require('prop-types')
 const MessagePanel = require('./partials/message-panel')
 
 const Homepage = ({ ctx, messages }) => [
-<xmaseggs ctx={ctx} />,
+
     <Jumbotron ctx={ctx} />,
     <Userbox ctx={ctx} />,
+    <EggSpreadsheet />,
 
 
 
@@ -15,7 +16,7 @@ const Homepage = ({ ctx, messages }) => [
             <NewMessagePanel ctx={ctx} />
             <h2>Recent Guesses</h2>
             {messages.length === 0 ? (
-                <span>No messages. Wanna be the first?</span>
+                <span>No guesses. Be the first?</span>
             ) : (
                 [
                     messages.map(message => (
@@ -42,16 +43,21 @@ const Homepage = ({ ctx, messages }) => [
 ]
 
 const Jumbotron = () => (
-    <div className="jumbotron text-center" style={{ backgroundColor: 'inherit' }}>
+    <div className="jumbotron text-center">
         <h1>
             <a href="/" style={{ color: '#333' }}>
-                Today Lay
+                TODAY LAY
             </a>
         </h1>
-        <table id="customers">
+</div>
+)
+
+const EggSpreadsheet = () => (
+<div id="customers">
+<table>
   <tr>
     <th>Calendar date</th>
-    <th>9 am Temp</th>
+    <th>9am Temp 'C'</th>
     <th>No of Eggs</th>
     <th>Total Weight</th>
     <th>Blue Egg</th>
@@ -60,46 +66,41 @@ const Jumbotron = () => (
     <th>Small Brown Egg</th>
     <th>Large Brown Egg</th>
   </tr>
- <tr><td>Saturday, November 18, 2017</td><td>7.6 'C'</td><td>5</td><td>294 gms</td><td>50 gms</td><td>67 gms</td><td>57 gms</td><td>54 gms</td><td>66 gms</td></tr>
- <tr><td>Sunday, November 19, 2017</td><td>11.9 'C'</td><td>5</td><td>297 gms</td><td>56 gms</td><td>63 gms</td><td>55 gms</td><td>54 gms</td><td>69 gms</td></tr>
- <tr><td>Monday, November 20, 2017</td><td>&nbsp;</td><td>3</td><td>174 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>53 gms</td><td>53 gms</td><td>68 gms</td></tr>
- <tr><td>Tuesday, November 21, 2017</td><td>12.5 'C'</td><td>4</td><td>237 gms</td><td>53 gms</td><td>79 gms</td><td>53 gms</td><td>52 gms</td><td>&nbsp;</td></tr>
- <tr><td>Wednesday, November 22, 2017</td><td>12.4 'C'</td><td>3</td><td>187 gms</td><td>49 gms</td><td>68 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>70 gms</td></tr>
- <tr><td>Thursday, November 23, 2017</td><td>11.0 'C'</td><td>3</td><td>198 gms</td><td>&nbsp;</td><td>65 gms</td><td>&nbsp;</td><td>58 gms</td><td>75 gms</td></tr>
- <tr><td>Friday, November 24, 2017</td><td>6.2 'C'</td><td>4</td><td>239 gms</td><td>55 gms</td><td>&nbsp;</td><td>57 gms</td><td>56 gms</td><td>71 gms</td></tr>
- <tr><td>Saturday, November 25, 2017</td><td>5.2 'C'</td><td>4</td><td>248 gms</td><td>52 gms</td><td>72 gms</td><td>&nbsp;</td><td>52 gms</td><td>72 gms</td></tr>
- <tr><td>Sunday, November 26, 2017</td><td>&nbsp;</td><td>3</td><td>177 gms</td><td>&nbsp;</td><td>66 gms</td><td>58 gms</td><td>53 gms</td><td>&nbsp;</td></tr>
- <tr><td>Monday, November 27, 2017</td><td>6.0 'C'</td><td>1</td><td>57 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>57 gms</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Tuesday, November 28, 2017</td><td>6.0 'C'</td><td>5</td><td>320 gms</td><td>56 gms</td><td>72 gms</td><td>58 gms</td><td>60 gms</td><td>74 gms</td></tr>
- <tr><td>Wednesday, November 29, 2017</td><td>2.6 'C'</td><td>4</td><td>244 gms</td><td>54 gms</td><td>65 gms</td><td>&nbsp;</td><td>55 gms</td><td>70 gms</td></tr>
- <tr><td>Thursday, November 30, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Friday, December 01, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Saturday, December 02, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Sunday, December 03, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Monday, December 04, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Tuesday, December 05, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Wednesday, December 06, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Thursday, December 07, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Friday, December 08, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Saturday, December 09, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Sunday, December 10, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Monday, December 11, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Tuesday, December 12, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Wednesday, December 13, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Thursday, December 14, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Friday, December 15, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Saturday, December 16, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Sunday, December 17, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Monday, December 18, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Tuesday, December 19, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Wednesday, December 20, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Thursday, December 21, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Friday, December 22, 2017</td><td>&nbsp;</td><td>&nbsp;</td><td>0 gms</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td></td></tr>
 
+ <tr><td>Saturday, November 18</td><td>7.6</td><td>5</td><td>294g</td><td>50g</td><td>67g</td><td>57g</td><td>54g</td><td>66g</td></tr>
+ <tr><td>Sunday, November 19</td><td>11.9</td><td>5</td><td>297g</td><td>56g</td><td>63g</td><td>55g</td><td>54g</td><td>69g</td></tr>
+ <tr><td>Monday, November 20</td><td>&nbsp;</td><td>3</td><td>225g</td><td>51g</td><td>&nbsp;</td><td>53g</td><td>53g</td><td>68g</td></tr>
+ <tr><td>Tuesday, November 21</td><td>12.5</td><td>4</td><td>237g</td><td>53g</td><td>79g</td><td>53g</td><td>52g</td><td>&nbsp;</td></tr>
+ <tr><td>Wednesday, November 22</td><td>12.4</td><td>3</td><td>187g</td><td>49g</td><td>68g</td><td>&nbsp;</td><td>&nbsp;</td><td>70g</td></tr>
+ <tr><td>Thursday, November 23</td><td>11.0</td><td>4</td><td>249g</td><td>51g</td><td>65g</td><td>&nbsp;</td><td>58g</td><td>75g</td></tr>
+ <tr><td>Friday, November 24</td><td>6.2</td><td>4</td><td>239g</td><td>55g</td><td>&nbsp;</td><td>57g</td><td>56g</td><td>71g</td></tr>
+ <tr><td>Saturday, November 25</td><td>5.2</td><td>4</td><td>248g</td><td>52g</td><td>72g</td><td>&nbsp;</td><td>52g</td><td>72g</td></tr>
+ <tr><td>Sunday, November 26</td><td>&nbsp;</td><td>4</td><td>229g</td><td>52g</td><td>66g</td><td>58g</td><td>53g</td><td>&nbsp;</td></tr>
+ <tr><td>Monday, November 27</td><td>6.0</td><td>1</td><td>57g</td><td>&nbsp;</td><td>&nbsp;</td><td>57g</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+ <tr><td>Tuesday, November 28</td><td>6.0</td><td>5</td><td>320g</td><td>56g</td><td>72g</td><td>58g</td><td>60g</td><td>74g</td></tr>
+ <tr><td>Wednesday, November 29</td><td>2.6</td><td>4</td><td>244g</td><td>54g</td><td>65g</td><td>&nbsp;</td><td>55g</td><td>70g</td></tr>
+ <tr><td>Thursday, November 30</td><td>2.6</td><td>2</td><td>111g</td><td>53g</td><td>&nbsp;</td><td>58g</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+ <tr><td>Friday, December 01</td><td>2.5</td><td>&nbsp;</td><td>0g</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+ <tr><td>Saturday, December 02</td><td>3.5</td><td>5</td><td>305g</td><td>50g</td><td>63g</td><td>58g</td><td>59g</td><td>75g</td></tr>
+ <tr><td>Sunday, December 03</td><td>7.3</td><td>4</td><td>238g</td><td>55g</td><td>&nbsp;</td><td>59g</td><td>54g</td><td>70g</td></tr>
+ <tr><td>Monday, December 04</td><td>10.2</td><td>5</td><td>298g</td><td>50g</td><td>71g</td><td>55g</td><td>53g</td><td>69g</td></tr>
+ <tr><td>Tuesday, December 05</td><td>8.3</td><td>3</td><td>168g</td><td>50g</td><td>63g</td><td>55g</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+ <tr><td>Wednesday, December 06</td><td>7.6</td><td>2</td><td>116g</td><td>&nbsp;</td><td>59g</td><td>57g</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+ <tr><td>Thursday, December 07</td><td>10.0</td><td>3</td><td>218g</td><td>54g</td><td>&nbsp;</td><td>56g</td><td>42g</td><td>66g</td></tr>
+ <tr><td>Friday, December 08</td><td>3.1</td><td>5</td><td>316g</td><td>52g</td><td>70g</td><td>69g</td><td>58g</td><td>67g</td></tr>
+ <tr><td>Saturday, December 09</td><td>2.9</td><td>5</td><td>295g</td><td>49g</td><td>64g</td><td>56g</td><td>56g</td><td>70g</td></tr>
+ <tr><td>Sunday, December 10</td><td>2.2</td><td>1</td><td>51g</td><td>51g</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+ <tr><td>Monday, December 11</td><td>2.8</td><td>3</td><td>189g</td><td>&nbsp;</td><td>72g</td><td>59g</td><td>58g</td><td>&nbsp;</td></tr>
+ <tr><td>Tuesday, December 12</td><td>3.6</td><td>5</td><td>302g</td><td>55g</td><td>64g</td><td>56g</td><td>53g</td><td>74g</td></tr>
+ <tr><td>Wednesday, December 13</td><td>3.5</td><td>5</td><td>303g</td><td>51g</td><td>71g</td><td>59g</td><td>51g</td><td>71g</td></tr>
+ <tr><td>Thursday, December 14</td><td>3.6</td><td>4</td><td>254g</td><td>51g</td><td>68g</td><td>&nbsp;</td><td>60g</td><td>75g</td></tr>
+ <tr><td>Friday, December 15</td><td>4.0</td><td>3</td><td>172g</td><td>51g</td><td>&nbsp;</td><td>63g</td><td>58g</td><td>&nbsp;</td></tr>
+ <tr><td>Saturday, December 16</td><td>6.9</td><td>3</td><td>196g</td><td>&nbsp;</td><td>67g</td><td>&nbsp;</td><td>55g</td><td>74g</td></tr>
+ <tr><td>Sunday, December 17</td><td>7.5</td><td>4</td><td>256g</td><td>58g</td><td>72g</td><td>&nbsp;</td><td>55g</td><td>71g</td></tr>
 
 </table>
-    </div>
-)
+</div>
+    )
 
 const NewMessagePanel = ({ ctx }) => (
     <form method="POST" action="/messages">
@@ -111,19 +112,20 @@ const NewMessagePanel = ({ ctx }) => (
                         className="form-control"
                         id="eggs-input"
                         name="eggs"
-                        placeholder="500??"
+                        placeholder=""
                         required
                         maxLength="255"
                     >
                         {ctx.flash.params && ctx.flash.params.eggs}
                     </textarea>
                 </div>
+                <p className="lead text-center">And what was the total weight of all the eggs?</p>
                 <div className="form-group">
                     <textarea
                         className="form-control"
                         id="weight-input"
                         name="weight"
-                        placeholder="60g"
+                        placeholder=""
                         required
                         maxLength="255"
                     >
@@ -149,16 +151,23 @@ const NewMessagePanel = ({ ctx }) => (
 const Userbox = ({ ctx }) => {
     if (ctx.currUser) {
         return [
-            <div >
-                <p style={{ marginTop: '20px' }}>Welcome back {' '} {ctx.currUser.uname}{' '}</p>
+            <div class='introtext text-center'>
+                <p>Welcome back {' '} {ctx.currUser.uname}{' '}</p>
             </div>,
         ]
     } else {
         return [
-        <div>
-        <p style={{ marginTop: '20px' }}>
-            Greetings Manxman, to win gambling credit please <a href="/register"> REGISTER</a> or <a href="/login"> LOGIN</a>,
+        <div class='jumbotron introtext text-center'>
+        <p>
+            To win gambling credit please study the instructions and table below, then <a href="/register"> REGISTER</a> to get winning! Or if you already have an account please <a href="/login"> LOGIN</a>,
         </p>
+        <h2>Egg number prediction</h2>
+<p>There will be £5 for predicting the correct number of eggs laid.
+We have so far recorded the eggs laid over 30 days.  108 eggs have been laid, therefore an average of 3.6 eggs per day.</p>
+
+<h2>Total egg weight prediction</h2>
+<p>£5 for predicting, within 10%, the total egg weight for the day.
+Over 360 days 6614 grams of eggs have been laid. Average weight per day therefore,  220 grams.</p>
         </div>,
         ]
     }

@@ -21,7 +21,7 @@ const Master = ({ children, title, ctx }) => (
                 <div className="container">
                     <div className="navbar-header">
                         <a className="navbar-brand" href="/">
-                            Today Lay
+                            TODAY LAY: gambling seed money for minors
                         </a>
                     </div>
                     <Userbox ctx={ctx} />
