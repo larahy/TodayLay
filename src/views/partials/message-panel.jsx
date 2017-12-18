@@ -38,7 +38,7 @@ const MessagePanel = ({ ctx, message }) => {
                 className={`panel-body ${message.is_hidden ? 'bg-danger' : ''}`}
                 style={{ maxHeight: '200px', overflow: 'auto' }}
                 dangerouslySetInnerHTML={{
-                    __html: 'Average Weight: ' + belt.markupToHtml(message.weight),
+                    __html: 'Total Weight: ' + belt.markupToHtml(message.weight),
                 }}
             />
 
