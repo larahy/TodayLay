@@ -7,6 +7,7 @@ const Homepage = ({ ctx, messages }) => [
 
     <Jumbotron ctx={ctx} />,
     <Userbox ctx={ctx} />,
+    <EggSpreadsheet />,
 
 
     <div className="row">
@@ -33,7 +34,6 @@ const Homepage = ({ ctx, messages }) => [
                 ]
             )}
         </div>
-        <EggSpreadsheet />,
     </div>,
 
     <script src="https://www.google.com/recaptcha/api.js" />,
