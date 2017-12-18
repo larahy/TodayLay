@@ -106,7 +106,7 @@ const EggSpreadsheet = () => (
 
 const NewMessagePanel = ({ ctx }) => (
     <form method="POST" action="/messages">
-        <div className="panel panel-default">
+        <div id="guess" className="panel panel-default">
             <div className="panel-body">
                 <p className="lead text-center">How many eggs do you think were laid today?</p>
                 <div className="form-group">
@@ -157,6 +157,7 @@ const Userbox = ({ ctx }) => {
                 <h2>Welcome back {' '} {ctx.currUser.uname}{' '}</h2>
                 <p>Your Current Credit is {' £'}{ctx.currUser.email} {' '}</p>
         <p>Today's temperature is 6.8 'C'</p>
+        <p><a id="button" href="#guess">PLAY TODAY LAY TODAY!</a> </p>
     
             </div>,
         ]

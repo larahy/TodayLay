@@ -160,7 +160,7 @@ router.post('/messages', mw.ratelimit(), mw.ensureRecaptcha(), async ctx => {
         user_agent: ctx.headers['user-agent'],
     })
     // RESPOND
-    ctx.flash = { message: ['success', 'Message created!'] }
+    ctx.flash = { message: ['success', 'Guess registered! Remember to check back tomorrow to see how much you won'] }
     ctx.redirect('/')
 })
 
