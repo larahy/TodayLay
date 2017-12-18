@@ -9,7 +9,6 @@ const Homepage = ({ ctx, messages }) => [
     <Userbox ctx={ctx} />,
 
 
-
     <div className="row">
         <div className="col-lg-6 col-lg-offset-3">
             <NewMessagePanel ctx={ctx} />
@@ -43,12 +42,15 @@ const Homepage = ({ ctx, messages }) => [
 ]
 
 const Jumbotron = () => (
+
     <div className="jumbotron text-center">
         <h1>
             <a href="/" style={{ color: '#333' }}>
                 TODAY LAY
             </a>
         </h1>
+        <audio autoplay="true" controls src="./audio/lay.mp3" type="audio/mpeg">
+</audio>
 </div>
 )
 
