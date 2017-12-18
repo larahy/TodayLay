@@ -144,9 +144,6 @@ router.post('/messages', mw.ratelimit(), mw.ensureRecaptcha(), async ctx => {
         .trim()
         .tap(belt.transformMarkup)
         .isLength(1, 100, 'Message must be 1-300 chars')
-    console.log('eggs = ', ctx.vals.eggs)
-    console.log('weight = ', ctx.vals.weight)
-    console.log('context', ctx)
 
     ctx
         .validateBody('weight')
@@ -160,7 +157,7 @@ router.post('/messages', mw.ratelimit(), mw.ensureRecaptcha(), async ctx => {
         user_agent: ctx.headers['user-agent'],
     })
     // RESPOND
-    ctx.flash = { message: ['success', 'Guess registered! Remember to check back tomorrow to see how much you won'] }
+    ctx.flash = { message: ['success', 'Eggsellent guess! Dont forget to check in tomorrow to see how much you won.... '] }
     ctx.redirect('/')
 })
 

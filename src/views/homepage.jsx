@@ -154,7 +154,7 @@ const Userbox = ({ ctx }) => {
     if (ctx.currUser) {
         return [
             <div class='introtext jumbotron text-center'>
-                <h2>Welcome back {' '} {ctx.currUser.uname}{' '}</h2>
+                <h2>Hello {' '} {ctx.currUser.uname}{' '}</h2>
                 <p>Your Current Credit is {' £'}{ctx.currUser.email} {' '}</p>
         <p>Today's temperature is 6.8 'C'</p>
         <p><a id="button" href="#guess">PLAY TODAY LAY TODAY!</a> </p>
