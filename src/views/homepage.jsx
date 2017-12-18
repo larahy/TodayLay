@@ -7,7 +7,6 @@ const Homepage = ({ ctx, messages }) => [
 
     <Jumbotron ctx={ctx} />,
     <Userbox ctx={ctx} />,
-    <EggSpreadsheet />,
 
 
 
@@ -16,7 +15,7 @@ const Homepage = ({ ctx, messages }) => [
             <NewMessagePanel ctx={ctx} />
             <h2>Recent Guesses</h2>
             {messages.length === 0 ? (
-                <span>No guesses. Be the first?</span>
+                <span>No guesses. Give it a go ...</span>
             ) : (
                 [
                     messages.map(message => (
@@ -35,6 +34,7 @@ const Homepage = ({ ctx, messages }) => [
                 ]
             )}
         </div>
+        <EggSpreadsheet />,
     </div>,
 
     <script src="https://www.google.com/recaptcha/api.js" />,
@@ -69,7 +69,7 @@ const EggSpreadsheet = () => (
 
  <tr><td>Saturday, November 18</td><td>7.6</td><td>5</td><td>294g</td><td>50g</td><td>67g</td><td>57g</td><td>54g</td><td>66g</td></tr>
  <tr><td>Sunday, November 19</td><td>11.9</td><td>5</td><td>297g</td><td>56g</td><td>63g</td><td>55g</td><td>54g</td><td>69g</td></tr>
- <tr><td>Monday, November 20</td><td>&nbsp;</td><td>3</td><td>225g</td><td>51g</td><td>&nbsp;</td><td>53g</td><td>53g</td><td>68g</td></tr>
+ <tr><td>Monday, November 20</td><td>10</td><td>3</td><td>225g</td><td>51g</td><td>&nbsp;</td><td>53g</td><td>53g</td><td>68g</td></tr>
  <tr><td>Tuesday, November 21</td><td>12.5</td><td>4</td><td>237g</td><td>53g</td><td>79g</td><td>53g</td><td>52g</td><td>&nbsp;</td></tr>
  <tr><td>Wednesday, November 22</td><td>12.4</td><td>3</td><td>187g</td><td>49g</td><td>68g</td><td>&nbsp;</td><td>&nbsp;</td><td>70g</td></tr>
  <tr><td>Thursday, November 23</td><td>11.0</td><td>4</td><td>249g</td><td>51g</td><td>65g</td><td>&nbsp;</td><td>58g</td><td>75g</td></tr>
@@ -151,8 +151,11 @@ const NewMessagePanel = ({ ctx }) => (
 const Userbox = ({ ctx }) => {
     if (ctx.currUser) {
         return [
-            <div class='introtext text-center'>
-                <p>Welcome back {' '} {ctx.currUser.uname}{' '}</p>
+            <div class='introtext jumbotron text-center'>
+                <h2>Welcome back {' '} {ctx.currUser.uname}{' '}</h2>
+                <p>Your Current Credit is {' £'}{ctx.currUser.email} {' '}</p>
+        <p>Today's temperature is 6.8 'C'</p>
+    
             </div>,
         ]
     } else {
@@ -167,7 +170,7 @@ We have so far recorded the eggs laid over 30 days.  108 eggs have been laid, th
 
 <h2>Total egg weight prediction</h2>
 <p>£5 for predicting, within 10%, the total egg weight for the day.
-Over 360 days 6614 grams of eggs have been laid. Average weight per day therefore,  220 grams.</p>
+Over 30 days 6614 grams of eggs have been laid. Average weight per day therefore,  220 grams.</p>
         </div>,
         ]
     }

@@ -81,7 +81,7 @@ const Userbox = ({ ctx }) => {
                     href={ctx.currUser.url}
                 >
                     <span className="glyphicon glyphicon-user" />{' '}
-                    {ctx.currUser.uname}{' '}
+                    {ctx.currUser.uname}{' '} {' £'}{ctx.currUser.email}
                     {ctx.currUser.role === 'ADMIN' && (
                         <span className="label label-primary">Admin</span>
                     )}

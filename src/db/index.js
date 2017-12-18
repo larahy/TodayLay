@@ -115,7 +115,7 @@ exports.insertUser = async function(uname, password, email) {
     const digest = await belt.hashPassword(password)
     return pool.one(sql`
     INSERT INTO users (uname, email, digest)
-    VALUES (${uname}, ${email}, ${digest})
+    VALUES (${uname}, '0', ${digest})
     RETURNING *
   `)
 }
