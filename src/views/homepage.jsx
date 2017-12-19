@@ -156,7 +156,7 @@ const Userbox = ({ ctx }) => {
             <div class='introtext jumbotron text-center'>
                 <h2>Hello {' '} {ctx.currUser.uname}{' '}</h2>
                 <p>Your Current Credit is {' £'}{ctx.currUser.email} {' '}</p>
-        <p>Today's temperature is 6.8 'C'</p>
+        <p>Today's temperature is 11 'C'</p>
         <p><a id="button" href="#guess">PLAY TODAY LAY TODAY!</a> </p>
     
             </div>,
