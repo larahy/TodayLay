@@ -49,7 +49,7 @@ const Jumbotron = () => (
                 TODAY LAY
             </a>
         </h1>
-        <audio autoplay="true" controls src="./audio/lay.mp3" type="audio/mpeg">
+        <audio autoplay="true" controls src="./audio/Layla.mp3" type="audio/mpeg">
 </audio>
 </div>
 )
@@ -100,7 +100,7 @@ const EggSpreadsheet = () => (
  <tr><td>Saturday, December 16</td><td>6.9</td><td>3</td><td>196g</td><td>&nbsp;</td><td>67g</td><td>&nbsp;</td><td>55g</td><td>74g</td></tr>
  <tr><td>Sunday, December 17</td><td>7.5</td><td>4</td><td>256g</td><td>58g</td><td>72g</td><td>&nbsp;</td><td>55g</td><td>71g</td></tr>
  <tr><td>Monday, December 18</td><td>6.8</td><td>4</td><td>231g</td><td>52g</td><td>66g</td><td>59g</td><td>54g</td><td>&nbsp;</td></tr>
-
+ <tr><td>Tuesday, December 19</td><td>11</td><td>2</td><td>126g</td><td>51g</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>75</td></tr>
 </table>
 </div>
     )
