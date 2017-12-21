@@ -49,7 +49,7 @@ const Jumbotron = () => (
                 TODAY LAY
             </a>
         </h1>
-        <audio autoplay="true" controls src="./audio/Layla.mp3" type="audio/mpeg">
+        <audio autoplay="true" controls src="./audio/Funky.mp3" type="audio/mpeg">
 </audio>
 </div>
 )
