@@ -49,7 +49,7 @@ const Jumbotron = () => (
                 TODAY LAY
             </a>
         </h1>
-        <audio autoplay="true" controls src="./audio/Funky.mp3" type="audio/mpeg">
+        <audio autoplay="true" controls src="./audio/Jolene.mp3" type="audio/mpeg">
 </audio>
 </div>
 )
@@ -102,6 +102,7 @@ const EggSpreadsheet = () => (
  <tr><td>Monday, December 18</td><td>6.8</td><td>4</td><td>231g</td><td>52g</td><td>66g</td><td>59g</td><td>54g</td><td>&nbsp;</td></tr>
  <tr><td>Tuesday, December 19</td><td>11</td><td>2</td><td>126g</td><td>51g</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>75g</td></tr>
  <tr><td>Wednesday, December 20</td><td>11</td><td>3</td><td>186g</td><td>&nbsp;</td><td>&nbsp;</td><td>61g</td><td>58g</td><td>67g</td></tr>
+ <tr><td>Thursday, December 21</td><td>11</td><td>3</td><td>180g</td><td>58g</td><td>69g</td><td>&nbsp;</td><td>53g</td><td>&nbsp;</td></tr>
 </table>
 </div>
     )
@@ -158,7 +159,7 @@ const Userbox = ({ ctx }) => {
             <div class='introtext jumbotron text-center'>
                 <h2>Hello {' '} {ctx.currUser.uname}{' '}</h2>
                 <p>Your Current Credit is {' £'}{ctx.currUser.email} {' '}</p>
-        <p>Today's temperature is 11 'C'</p>
+        <p>Today's temperature is 8.5 'C'</p>
         <p><a id="button" href="#guess">PLAY TODAY LAY TODAY!</a> </p>
     
             </div>,
